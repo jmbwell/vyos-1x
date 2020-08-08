@@ -6,8 +6,21 @@
     <node name="prefix-delegation">
       <properties>
         <help>DHCPv6 Prefix Delegation Options</help>
+        <multi />
       </properties>
       <children>
+        <leafNode name="id">
+          <properties>
+            <help>Identity association for prefix delegation (ia-pd)</help>
+            <valueHelp>
+              <format>&gt;0</format>
+              <description>Index for this identity association (ia-pd)</description>
+            </valueHelp>
+            <constraint>
+              <validator name="numeric" argument="--range 0-64"/>
+            </constraint>
+          </properties>
+        </leafNode>
         <leafNode name="length">
           <properties>
             <help>Request IPv6 prefix length from peer</help>
